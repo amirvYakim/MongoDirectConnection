@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoConnectionAPI", "MongoConnectionAPI\MongoConnectionAPI.csproj", "{3CCB660B-5453-4CB6-8B05-302BBE1121F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YakimGame.Package.Local", "YakimGame.Package.Local", "{6573313D-6289-4460-8E22-2DD07FC8EA7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YakimGames.MongoDB.Connector", "..\YakimGames.Packages\YakimGames.MongoDB.Connector\YakimGames.MongoDB.Connector.csproj", "{733A0ABD-555A-416A-95B9-1ED8FA953D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YakimGames.AWS.SecretManager", "..\YakimGames.Packages\YakimGames.AWS.SecretManager\YakimGames.AWS.SecretManager.csproj", "{FD92228C-5C5D-4459-ABDB-8C0BED183F01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CCB660B-5453-4CB6-8B05-302BBE1121F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCB660B-5453-4CB6-8B05-302BBE1121F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCB660B-5453-4CB6-8B05-302BBE1121F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCB660B-5453-4CB6-8B05-302BBE1121F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{733A0ABD-555A-416A-95B9-1ED8FA953D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733A0ABD-555A-416A-95B9-1ED8FA953D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733A0ABD-555A-416A-95B9-1ED8FA953D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733A0ABD-555A-416A-95B9-1ED8FA953D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD92228C-5C5D-4459-ABDB-8C0BED183F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD92228C-5C5D-4459-ABDB-8C0BED183F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD92228C-5C5D-4459-ABDB-8C0BED183F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD92228C-5C5D-4459-ABDB-8C0BED183F01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{733A0ABD-555A-416A-95B9-1ED8FA953D2D} = {6573313D-6289-4460-8E22-2DD07FC8EA7E}
+		{FD92228C-5C5D-4459-ABDB-8C0BED183F01} = {6573313D-6289-4460-8E22-2DD07FC8EA7E}
+	EndGlobalSection
+EndGlobal

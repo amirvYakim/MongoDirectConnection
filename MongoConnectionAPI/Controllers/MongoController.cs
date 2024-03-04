@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using MongoDirectConnection.Handlers;
 using MongoDirectConnection.Models;
 using YakimGames.MongoDB.Connector;
 
@@ -11,11 +12,13 @@ namespace MongoDirectConnection.Controllers;
 public class MongoController : ControllerBase
 {
     private readonly IMongoConnectionManager _mongoConnectionManager;
+    private readonly ILoggerFactory _loggerFactory;
     private readonly string _connectionString;
     
-    public MongoController(IMongoConnectionManager mongoConnectionManager)
+    public MongoController(IMongoConnectionManager mongoConnectionManager, ILoggerFactory loggerFactory)
     {
         _mongoConnectionManager = mongoConnectionManager;
+        _loggerFactory = loggerFactory;
         _connectionString = GetConnectionString();
     }
 
@@ -24,12 +27,17 @@ public class MongoController : ControllerBase
     {
         try
         {
+            // option 2
+            var handlerTest = new GetPokemonTrainerHandler(_loggerFactory);
+            var test = await handlerTest.Handle<List<User>>();
+            
+            // option 1
             var mongoDatabase = await _mongoConnectionManager.GetDatabaseAsync(_connectionString, "local");
             var collection = mongoDatabase.GetCollection<User>("test_collection");
             var filter = Builders<User>.Filter.Eq(u => u.IsPokemonTrainer, true);
             var document =  collection.Find(filter).ToList();
             
-            return Ok(document);
+            return Ok(test);
         }
         catch (Exception e)
         {

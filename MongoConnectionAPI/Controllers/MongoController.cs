@@ -51,11 +51,16 @@ public class MongoController : ControllerBase
     {
         try
         {
-            var mongoDatabase = await _mongoConnectionManager.GetDatabaseAsync(_connectionString,"local");
+            // option 2
+            var handlerTest = new AddPokemonTrainerHandler(_loggerFactory);
+            var test = await handlerTest.Handle<List<User>>(user);
+            
+            // option 1... have to comment or it will enter same id twice
+            /*var mongoDatabase = await _mongoConnectionManager.GetDatabaseAsync(_connectionString,"local");
             var collection = mongoDatabase.GetCollection<User>("test_collection");
-            await collection.InsertOneAsync(user);
+            await collection.InsertOneAsync(user);*/
 
-            return Ok(user);
+            return Ok(test);
         }
         catch (Exception e)
         {

@@ -1,10 +1,11 @@
 using MongoDB.Driver;
 using MongoDirectConnection.Models;
-using YakimGames.MongoDB.Connector;
+using YakimGames.MongoDB.Connector.MongoConnection;
+using YakimGames.MongoDB.Connector.MongoQuery;
 
 namespace MongoDirectConnection.Handlers;
 
-public class GetPokemonTrainerHandler : MongoQueryLinkBase<NoArgument>
+public class GetPokemonTrainerHandler : MongoQueryHandlerBase
 {
     private readonly IMongoConnectionManager _mongoConnectionManager;
     private readonly ILoggerFactory _loggerFactory;
@@ -14,7 +15,7 @@ public class GetPokemonTrainerHandler : MongoQueryLinkBase<NoArgument>
         _mongoConnectionManager = new MongoConnectionManager(loggerFactory);
     }
     
-    protected override async Task MongoOnExecuteAsync(NoArgument noArgument)
+    protected override async Task MongoOnExecuteAsync()
     {
         var mongoDatabase = await _mongoConnectionManager.GetDatabaseAsync("mongodb://localhost:27017", "local");
         var collection = mongoDatabase.GetCollection<User>("test_collection");

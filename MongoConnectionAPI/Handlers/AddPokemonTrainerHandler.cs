@@ -1,9 +1,10 @@
 using MongoDirectConnection.Models;
-using YakimGames.MongoDB.Connector;
+using YakimGames.MongoDB.Connector.MongoConnection;
+using YakimGames.MongoDB.Connector.MongoQuery;
 
 namespace MongoDirectConnection.Handlers;
 
-public class AddPokemonTrainerHandler : MongoQueryLinkBase<User>
+public class AddPokemonTrainerHandler : MongoQueryHandlerBase<User>
 {
     private readonly IMongoConnectionManager _mongoConnectionManager;
     private readonly ILoggerFactory _loggerFactory;

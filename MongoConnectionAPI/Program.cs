@@ -1,5 +1,5 @@
 using YakimGame.AWS.SecretManager;
-using YakimGames.MongoDB.Connector;
+using YakimGames.MongoDB.Connector.MongoConnection;
 
 
 

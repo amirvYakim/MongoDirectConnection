@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using MongoDirectConnection.Handlers;
 using MongoDirectConnection.Models;
-using YakimGames.MongoDB.Connector;
+using YakimGames.MongoDB.Connector.MongoConnection;
 
 namespace MongoDirectConnection.Controllers;
 
